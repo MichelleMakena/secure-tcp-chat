@@ -30,6 +30,28 @@ Decrypt session key                               |
         |      encrypted chat + file transfer      |
 ```
 
+!\[Secure communication sequence](docs/communication-sequence.png)
+
+## Application Demo
+
+The GUI reports TCP connectivity and cryptographic session state while network and file operations run in background threads.
+
+!\[Bob secure session GUI](docs/screenshots/secure-session-gui.png)
+
+Authenticated chat and encrypted file transfer operate over the established AES-256-GCM session.
+
+!\[Encrypted chat and file transfer](docs/screenshots/encrypted-chat-file-transfer.png)
+
+### Security Failure Testing
+
+The implementation was also tested against modified ciphertext/tags, incorrect keys, altered metadata and file-transfer failures. Invalid authenticated data is rejected rather than processed as trusted plaintext.
+
+!\[Tamper detection tests](docs/screenshots/tamper-detection-tests.png)
+
+Successful file reconstruction is published only after authentication and final SHA-256 verification.
+
+!\[Verified encrypted file receipt](docs/screenshots/verified-file-receipt.png)
+
 ## Key Security Features
 
 * RSA-2048 asymmetric cryptography for session-key protection
