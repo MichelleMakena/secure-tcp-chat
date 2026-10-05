@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime output
+logs/
+received_files/
+stage11_demo_files/
+stage11_tcp_demo/
+stage13_test_logs/
+*.log
+*.part
+
+# Local secrets / environment
+.env
+.env.*
+*.pem
+*.key
